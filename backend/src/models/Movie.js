@@ -70,4 +70,9 @@ const movieSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
+movieSchema.index({ genre: 1, watched: 1, createdAt: -1, _id: -1 });
+movieSchema.index({ createdAt: -1, _id: -1 });
+movieSchema.index({ rating: -1, _id: -1 });
+movieSchema.index({ releaseYear: -1, _id: -1 });
+
 export default mongoose.model("Movie", movieSchema);

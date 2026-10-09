@@ -11,6 +11,6 @@ export const errorHandler = (err, req, res, next) => {
       .status(400)
       .json({ success: false, message: "Malformed JSON in request body" });
   }
-  console.log(err);
+  console.error
   res.status(500).json({ success: false, message: "Server error" });
 };

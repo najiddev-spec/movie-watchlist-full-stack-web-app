@@ -5,6 +5,7 @@ export const handleError = (err, res) => {
     );
     return res.status(400).json({ success: false, message: "Validation failed", errors });
   }
+  console.log(err);
   res.status(500).json({ success: false, message: "Server error" });
 };
 
